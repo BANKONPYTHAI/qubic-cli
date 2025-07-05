@@ -257,7 +257,7 @@ void qearnGetUserLockedInfo(const char* nodeIp, const int nodePort, char* Identi
         LOG("Failed to receive data\n");
         return;
     }
-    printf("The amount of epoch %d: %llu\n", epoch,  result.LockedAmount);
+    printf("The amount of epoch %d: %lu\n", epoch,  result.LockedAmount);
 }
 
 void qearnGetStateOfRound(const char* nodeIp, const int nodePort, uint32_t epoch)
@@ -462,7 +462,7 @@ void qearnGetUserLockedStatus(const char* nodeIp, const int nodePort, char* Iden
         return;
     }
 
-    printf("binary result: %llu\nThe number of locked epoch is as follows.\n", result.status);
+    printf("binary result: %lu\nThe number of locked epoch is as follows.\n", result.status);
     auto curSystemInfo = getSystemInfoFromNode(qc);
     uint32_t curEpoch = curSystemInfo.epoch;
 
@@ -513,5 +513,5 @@ void qearnGetEndedStatus(const char* nodeIp, const int nodePort, char* Identity)
         LOG("Failed to receive data\n");
         return;
     }
-    printf("fully unlocking amount: %llu\nfully rewarded amount: %llu\nearly unlocking amount: %llu\nearly rewarded amount: %llu\n", result.Fully_Unlocked_Amount, result.Fully_Rewarded_Amount, result.Early_Unlocked_Amount, result.Early_Rewarded_Amount);
+    printf("fully unlocking amount: %lu\nfully rewarded amount: %lu\nearly unlocking amount: %lu\nearly rewarded amount: %lu\n", result.Fully_Unlocked_Amount, result.Fully_Rewarded_Amount, result.Early_Unlocked_Amount, result.Early_Rewarded_Amount);
 }
